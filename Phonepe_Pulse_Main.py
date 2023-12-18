@@ -19,9 +19,6 @@ st.set_page_config(page_title= "Phonepe Pulse Data Visualization | By Santhosh K
 
 st.sidebar.header(":wave: :violet[**Hello! Welcome to the dashboard**]")
 
-# #To clone the Github Pulse repository use the following code
-# Reference Syntax - Repo.clone_from("Clone Url", "Your working directory")
-
 # Creating connection with mysql workbench
 mydb = sql.connect(host="127.0.0.1",
                    user="root",
@@ -31,7 +28,6 @@ mydb = sql.connect(host="127.0.0.1",
                   )
 mycursor = mydb.cursor(buffered=True)
 
-
 # Creating option menu in the side bar
 with st.sidebar:
     selected = option_menu("Menu", ["Home","Top Charts","Explore Data","About"], 
@@ -40,6 +36,7 @@ with st.sidebar:
                 default_index=0,
                 styles={"nav-link": {"font-size": "20px", "text-align": "left", "margin": "-2px", "--hover-color": "#6F36AD"},
                         "nav-link-selected": {"background-color": "#6F36AD"}})
+  
 # MENU 1 - HOME
 if selected == "Home":
     st.markdown("# :violet[Data Visualization and Exploration]")
@@ -52,7 +49,6 @@ if selected == "Home":
         st.markdown("### :violet[Technologies used :] Github Cloning, Python, Pandas, MySQL, mysql-connector-python, Streamlit, and Plotly.")
         st.markdown("### :violet[Overview :] In this streamlit web app you can visualize the phonepe pulse data and gain lot of insights on transactions, number of users, top 10 state, district, pincode and which brand has most number of users and so on. Bar charts, Pie charts and Geo map visualization are used to get some insights.")
         
-
 # MENU 2 - TOP CHARTS
 if selected == "Top Charts":
     st.markdown("## :violet[Top Charts]")
